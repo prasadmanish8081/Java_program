@@ -1,0 +1,26 @@
+import java.util.*;
+public class J28 {
+    public static int fact(int n){
+        int fact = 1;
+        while(n > 0){
+            fact *= n--;
+        }
+        return fact;
+    }
+    public static void main(String[] args) {
+        int n = 145;
+        int m = n;
+        int sum = 0;
+        while(n != 0){
+            int rem = n % 10;
+            sum = sum + fact(rem);
+            n /= 10;
+        }
+        if(sum == m){
+            System.out.println("Strong number.");
+        }
+        else{
+            System.out.println("Not.");
+        }
+    }
+}
