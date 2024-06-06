@@ -1,0 +1,24 @@
+// Ex: 100 -> 1 + 0 + 0 = 1; 91 -> 9 + 1  = 10 -> 1 + 0 = 1;
+public class J28 {
+    public static int sum(int n){
+        int sum = 0;
+        while(n != 0){
+            int rem = n % 10;
+            sum += rem;
+            n /= 10;
+        }
+        return sum;
+    }
+    public static void main(String[] args) {
+        int n = 100;
+        while(n > 9){
+            n = sum(n);
+        }
+        if(n == 1){
+            System.out.println("Special number.");
+        }
+        else{
+            System.out.println("Not.");
+        }
+    }
+}
